@@ -15,12 +15,11 @@ def webhook():
 
   if data['name'] != 'briskeybot':
   
-    if 'Frost' or 'frost' in data['text']:
-		msg = 'Fuck John Frost!'
+    if 'GBQ' in data['text']:
+		msg = 'Its Jacob'
+		send_message(msg)
 	else
 		return "ok", 200
-		
-	send_message(msg)
 
   return "ok", 200
 
