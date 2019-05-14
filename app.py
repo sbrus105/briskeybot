@@ -14,7 +14,7 @@ def webhook():
   log('Recieved {}'.format(data))
 
   if data['name'] != 'briskeybot':  
-    if 'GBQ' in data['text']:
+    if 'GBQ' or 'gbq' in data['text']:
         msg = 'Its Jacob'
         send_message(msg)
     else:
