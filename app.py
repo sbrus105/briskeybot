@@ -17,7 +17,7 @@ def webhook():
     if 'GBQ' in data['text']:
         msg = 'Its Jacob'
         send_message(msg)
-    else
+    else:
         return "ok", 200
   return "ok", 200
 
