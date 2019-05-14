@@ -7,7 +7,8 @@ from urllib.request import Request, urlopen
 from flask import Flask, request
 
 app = Flask(__name__) #dont touch
-
+gbq = "GBQ"
+frost = "Frost"
 @app.route('/', methods=['POST'])
 
 
@@ -16,19 +17,10 @@ def webhook():
   log('Received {}'.format(data))
 
   if data['name'] != 'briskeybot':  #not message from self
-    if "GBQ" in data['text']:
+    if  gbq.lower() in data['text'].lower():
         msg = "It's Jacob."
         send_message(msg)
-    if "Gbq" in data['text']:
-        msg = "It's Jacob."
-        send_message(msg)
-    elif "gbq" in data['text']:
-        msg = "It's Jacob."
-        send_message(msg)
-    elif "Frost" in data['text']:
-        msg = "Fuck John Frost!"
-        send_message(msg)
-    elif "frost" in data['text']:
+    if frost.lower() in data['text'].lower():
         msg = "Fuck John Frost!"
         send_message(msg)
   return "ok", 200
