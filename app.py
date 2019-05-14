@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import re
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -16,17 +17,11 @@ def webhook():
   log('Received {}'.format(data))
 
   if data['name'] != 'briskeybot':  #not message from self
-    if "GBQ" in data['text']:
+    if re.search('gbq', data['text'], re.IGNORECASE):
         msg = "It's Jacob."
         send_message(msg)
-    elif "gbq" in data['text']:
-        msg = "It's Jacob."
-        send_message(msg)
-    elif "Frost" in data['text']:
-        msg = "Fuck John Frost!"
-        send_message(msg)
-    elif "frost" in data['text']:
-        msg = "Fuck John Frost!"
+    if re.search('frost', data['text'], re.IGNORECASE):
+        msg = "Fuck Jonathan Frost!"
         send_message(msg)
   return "ok", 200
 
