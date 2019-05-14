@@ -19,6 +19,9 @@ def webhook():
     if "GBQ" in data['text']:
         msg = "It's Jacob."
         send_message(msg)
+    if "Gbq" in data['text']:
+        msg = "It's Jacob."
+        send_message(msg)
     elif "gbq" in data['text']:
         msg = "It's Jacob."
         send_message(msg)
