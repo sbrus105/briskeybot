@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import random
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -15,7 +16,10 @@ frost = "Frost"
 def webhook():
   data = request.get_json()
   log('Received {}'.format(data))
-
+  if random.randint(1,101) == 42:
+      msg = "Shut the fuck up, @" + data['name']
+      send_message(msg)
+      return "ok",200
   if data['name'] != 'briskeybot':  #not message from self
     if  gbq.lower() in data['text'].lower():
         msg = "It's Jacob."
@@ -32,7 +36,7 @@ def send_message(msg):
 #5d108f5841a9977ddfa018e014  	The Deuce
 #44730fb274b2b3538d071f6f84		Tester
   data = {
-          'bot_id' : '5d108f5841a9977ddfa018e014',
+          'bot_id' : '44730fb274b2b3538d071f6f84',
           'text'   : msg,
          }
   request = Request(url, urlencode(data).encode())
