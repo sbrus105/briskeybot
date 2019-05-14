@@ -11,11 +11,11 @@ app = Flask(__name__) #dont touch
 @app.route('/', methods=['POST'])
 def webhook():
   data = request.get_json()
-  log('Recieved {}'.format(data))
+  log('Received {}'.format(data))
 
-  if data['name'] != 'briskeybot':  
-    if 'GBQ' or 'gbq' in data['text']:
-        msg = 'Its Jacob'
+  if data['name'] != 'briskeybot':  #not message from self
+    if ("GBQ" or "gbq") in data['text']:
+        msg = 'Its Jacob.'
         send_message(msg)
     elif 'Frost' or 'frost' in data['text']:
         msg= 'Fuck John Frost'
