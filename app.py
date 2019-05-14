@@ -9,18 +9,21 @@ from flask import Flask, request
 app = Flask(__name__) #dont touch
 
 @app.route('/', methods=['POST'])
+
+
 def webhook():
   data = request.get_json()
   log('Received {}'.format(data))
 
   if data['name'] != 'briskeybot':  #not message from self
     if ("GBQ" or "gbq") in data['text']:
-        msg = 'Its Jacob.'
+        msg = "It's Jacob."
         send_message(msg)
-    elif 'Frost' or 'frost' in data['text']:
-        msg= 'Fuck John Frost'
+    elif ("Frost" or "frost") in data['text']:
+        msg= "Fuck John Frost!"
         send_message(msg)
   return "ok", 200
+
 
 def send_message(msg):
   url  = 'https://api.groupme.com/v3/bots/post'
@@ -33,7 +36,8 @@ def send_message(msg):
          }
   request = Request(url, urlencode(data).encode())
   json = urlopen(request).read().decode()
-  
+
+
 def log(msg):
   print(str(msg))
   sys.stdout.flush()
