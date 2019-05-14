@@ -16,11 +16,17 @@ def webhook():
   log('Received {}'.format(data))
 
   if data['name'] != 'briskeybot':  #not message from self
-    if ("GBQ" or "gbq") in data['text']:
+    if "GBQ" in data['text']:
         msg = "It's Jacob."
         send_message(msg)
-    elif ("Frost" or "frost") in data['text']:
-        msg= "Fuck John Frost!"
+    elif "gbq" in data['text']:
+        msg = "It's Jacob."
+        send_message(msg)
+    elif "Frost" in data['text']:
+        msg = "Fuck John Frost!"
+        send_message(msg)
+    elif "frost" in data['text']:
+        msg = "Fuck John Frost!"
         send_message(msg)
   return "ok", 200
 
