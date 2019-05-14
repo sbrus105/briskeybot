@@ -13,21 +13,19 @@ def webhook():
   data = request.get_json()
   log('Recieved {}'.format(data))
 
-  if data['name'] != 'briskeybot':
-  
+  if data['name'] != 'briskeybot':  
     if 'GBQ' in data['text']:
-		msg = 'Its Jacob'
-		send_message(msg)
-	else
-		return "ok", 200
-
+        msg = 'Its Jacob'
+        send_message(msg)
+    else
+        return "ok", 200
   return "ok", 200
 
 def send_message(msg):
   url  = 'https://api.groupme.com/v3/bots/post'
   
-	#5d108f5841a9977ddfa018e014  	The Deuce
-	#44730fb274b2b3538d071f6f84		Tester
+#5d108f5841a9977ddfa018e014  	The Deuce
+#44730fb274b2b3538d071f6f84		Tester
   data = {
           'bot_id' : '44730fb274b2b3538d071f6f84',
           'text'   : msg,
