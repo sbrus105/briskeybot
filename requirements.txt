@@ -1,2 +1,7 @@
+Click==7.0
 Flask==0.12
 gunicorn==19.6.0
+itsdangerous==1.1.0
+Jinja2==2.10.1
+MarkupSafe==1.1.1
+Werkzeug==0.15.2
