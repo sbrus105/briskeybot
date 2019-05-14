@@ -17,7 +17,7 @@ def webhook():
     if 'GBQ' or 'gbq' in data['text']:
         msg = 'Its Jacob'
         send_message(msg)
-    if'Frost' or 'frost' in data['text']:
+    else if'Frost' or 'frost' in data['text']:
         msg= 'Fuck John Frost'
         send_message(msg)
   return "ok", 200
