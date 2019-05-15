@@ -16,16 +16,17 @@ frost = "Frost"
 def webhook():
   data = request.get_json()
   log('Received {}'.format(data))
-  if random.randint(1,101) == 42:
-      msg = "Shut the fuck up, @" + data['name']
-      send_message(msg)
-      return "ok",200
+
   if data['name'] != 'briskeybot':  #not message from self
-    if  gbq.lower() in data['text'].lower():
+    if random.randint(1, 101) == 42:
+        msg = "Shut the fuck up, @" + data['name']
+        send_message(msg)
+        return "ok", 200
+    if re.search('gbq', data['text'], re.IGNORECASE):
         msg = "It's Jacob."
         send_message(msg)
-    if frost.lower() in data['text'].lower():
-        msg = "Fuck John Frost!"
+    if re.search('frost', data['text'], re.IGNORECASE):
+        msg = "Fuck Jonathan Frost!"
         send_message(msg)
   return "ok", 200
 
