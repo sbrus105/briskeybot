@@ -10,28 +10,35 @@ from urllib.request import Request, urlopen
 from flask import Flask, request
 
 app = Flask(__name__) #dont touch
-gbq = "GBQ"
-frost = "Frost"
 @app.route('/', methods=['POST'])
 
 
 def webhook():
   data = request.get_json()
   log('Received {}'.format(data))
-
-  if data['name'] != 'briskeybot':  #not message from self
-    if random.randint(1, 101) == 42:
+#---------------------------------------------------------
+  if data['name'] != 'briskeybot':                       #not message from self
+    if random.randint(1, 101) == 42:                     #Shut up if
         msg = "Shut the fuck up, @" + data['name']
         send_message(msg)
-        return "ok", 200
-    if re.search('gbq', data['text'], re.IGNORECASE):
+        return "ok", 200    #only message to send
+    if re.search('gbq', data['text'], re.IGNORECASE):    #It's Jacob If                #The meat
         msg = "It's Jacob."
         send_message(msg)
-    if re.search('frost', data['text'], re.IGNORECASE):
+    if re.search('frost', data['text'], re.IGNORECASE):  #Frost if
         msg = "Fuck Jonathan Frost!"
         send_message(msg)
-  return "ok", 200
-
+    if re.search('nigger', data['text'], re.IGNORECASE):  #Nig if
+        msg = "Whoa there, @" + data['name'] + "! That's pretty offensive, please use the correct terminology, 'Basketball American'!"
+        send_message(msg)
+    if re.search('nigga', data['text'], re.IGNORECASE):  #Niga if
+        msg = "Whoa there, @" + data['name'] + "! That's pretty offensive, please use the correct terminology, 'Basketball American'!"
+        send_message(msg)
+    if data['name'] == 'Wooho Song':                    #Woo if
+        msg = "Holy shit, is that a message from Woo?"
+        send_message(msg)
+  return "ok", 200  #send all applicable messages
+#---------------------------------------------------------
 
 def send_message(msg):
   url  = 'https://api.groupme.com/v3/bots/post'
