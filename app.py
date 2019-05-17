@@ -40,6 +40,9 @@ def webhook():
     if re.search('chad', data['text'], re.IGNORECASE):  #Chad if
         msg = "You know who's a damn chad? @Caleb Sims, that's who."
         send_message(msg)
+    if re.search('everclear', data['text'], re.IGNORECASE):  #everclear if
+        msg = "Nothing good ever came out of a night that started with Everclear, remember that."
+        send_message(msg)
   return "ok", 200  #send all applicable messages
 #---------------------------------------------------------
 
