@@ -34,9 +34,9 @@ def webhook():
     if re.search('nigga', data['text'], re.IGNORECASE):  #Niga if
         msg = "Whoa there, @" + data['name'] + "! That's pretty offensive, please use the correct terminology, 'Basketball American'!"
         send_message(msg)
-    if data['name'] == 'Wooho Song':                    #Woo if
-        msg = "Holy shit, is that a message from Woo?"
-        send_message(msg)
+    #if data['name'] == 'Wooho Song':                    #Woo if
+       # msg = "Holy shit, is that a message from Woo?"
+       # send_message(msg)
     if re.search('chad', data['text'], re.IGNORECASE):  #Chad if
         msg = "You know who's a damn chad? @Caleb Sims, that's who."
         send_message(msg)
