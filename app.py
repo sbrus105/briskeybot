@@ -66,10 +66,10 @@ def send_message(msg):
   
 #5d108f5841a9977ddfa018e014  	The Deuce
 #44730fb274b2b3538d071f6f84		Tester
-data = {
-       'bot_id' : 'disabled', #replace this code with above ones for corresponding GM
-       'text'   : msg,
-       }
+    data = {
+           'bot_id' : 'disabled', #replace this code with above ones for corresponding GM
+           'text'   : msg,
+           }
 request = Request(url, urlencode(data).encode())
 json = urlopen(request).read().decode()
 
