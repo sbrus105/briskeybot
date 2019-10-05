@@ -62,7 +62,6 @@ def webhook():
 #---------------------------------------------------------
 
 def send_message(msg):
-    time.sleep(.2)
     url  = 'https://api.groupme.com/v3/bots/post'
   
 #5d108f5841a9977ddfa018e014  	The Deuce
