@@ -43,16 +43,32 @@ def webhook():
     if re.search('everclear', data['text'], re.IGNORECASE):  #everclear if
         msg = "Nothing good ever came out of a night that started with Everclear, remember that."
         send_message(msg)
+    if re.search('no homo', data['text'], re.IGNORECASE):  #homo if
+        msg = "yes homo"
+        send_message(msg)
+    if re.search('dick cheese', data['text'], re.IGNORECASE):  #cheese if
+        msg = "@Jacob Gonzales @Josh Rothfus"
+        send_message(msg)
+    if re.search('Navy', data['text'], re.IGNORECASE):  #navy if
+        msg = "SEaMEN"
+        send_message(msg)
+    if re.search('69', data['text'], re.IGNORECASE):  #everclear if
+        msg = "Nice."
+        send_message(msg)
+    if re.search('gamer', data['text'], re.IGNORECASE):  #everclear if
+        msg = "Gamer's are the most oppressed minority."
+        send_message(msg)
   return "ok", 200  #send all applicable messages
 #---------------------------------------------------------
 
 def send_message(msg):
-  url  = 'https://api.groupme.com/v3/bots/post'
+    time.sleep(.2)
+    url  = 'https://api.groupme.com/v3/bots/post'
   
 #5d108f5841a9977ddfa018e014  	The Deuce
 #44730fb274b2b3538d071f6f84		Tester
   data = {
-          'bot_id' : 'disable', #replace this code with above ones for corresponding GM
+          'bot_id' : '5d108f5841a9977ddfa018e014s', #replace this code with above ones for corresponding GM
           'text'   : msg,
          }
   request = Request(url, urlencode(data).encode())
