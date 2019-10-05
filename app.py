@@ -58,6 +58,9 @@ def webhook():
     if re.search('gamer', data['text'], re.IGNORECASE):  #everclear if
         msg = "Gamer's are the most oppressed minority."
         send_message(msg)
+    if re.search('420', data['text'], re.IGNORECASE):  #everclear if
+        msg = "Blaze it"
+        send_message(msg)
   return "ok", 200  #send all applicable messages
 #---------------------------------------------------------
 
