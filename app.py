@@ -61,10 +61,17 @@ def webhook():
     if re.search('420', data['text'], re.IGNORECASE):  #everclear if
         msg = "Blaze it"
         send_message(msg)
+    if re.search('born on a beach', data['text'], re.IGNORECASE):  #chant if
+        msg = "FUCKING AND FIGHTING IS ALL I CRAVE!"
+        send_message(msg)
+    if re.search('sweet meat hung like a railroad tie', data['text'], re.IGNORECASE):  #chant if
+        msg = "I'M A BAD MOTHERFUCKER I'M A SIGMA PI!"
+        send_message(msg)
   return "ok", 200  #send all applicable messages
 #---------------------------------------------------------
 
 def send_message(msg):
+
     url  = 'https://api.groupme.com/v3/bots/post'
   
     #5d108f5841a9977ddfa018e014  	The Deuce
