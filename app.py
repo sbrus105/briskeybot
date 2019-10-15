@@ -75,7 +75,7 @@ def webhook():
 
 def send_message(msg):
 
-    for x in range (0,500000):
+    for x in range (0,1000000):
         x += 1
 
     url  = 'https://api.groupme.com/v3/bots/post'
