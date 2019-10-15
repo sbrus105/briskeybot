@@ -62,10 +62,13 @@ def webhook():
         msg = "Blaze it"
         send_message(msg)
     if re.search('born on a beach', data['text'], re.IGNORECASE):  #chant if
-        msg = "FUCKING AND FIGHTING IS ALL I CRAVE!"
+        msg = "RAISED IN A CAVE!"
         send_message(msg)
-    if re.search('sweet meat hung like a railroad tie', data['text'], re.IGNORECASE):  #chant if
-        msg = "I'M A BAD MOTHERFUCKER I'M A SIGMA PI!"
+        if re.search('fucking and fighting is all i crave', data['text'], re.IGNORECASE):  #chant if
+        msg = "SWEET-MEAT HUNG LIKE A RAILROAD TIE!"
+        send_message(msg)
+    if re.search("I'm a bad mutherfucker", data['text'], re.IGNORECASE):  #chant if
+        msg = "I'M A SIGMA PI!"
         send_message(msg)
   return "ok", 200  #send all applicable messages
 #---------------------------------------------------------
