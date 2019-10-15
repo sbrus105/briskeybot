@@ -64,7 +64,7 @@ def webhook():
     if re.search('born on a beach', data['text'], re.IGNORECASE):  #chant if
         msg = "RAISED IN A CAVE!"
         send_message(msg)
-        if re.search('fucking and fighting is all i crave', data['text'], re.IGNORECASE):  #chant if
+    if re.search('fucking and fighting is all i crave', data['text'], re.IGNORECASE):  #chant if
         msg = "SWEET-MEAT HUNG LIKE A RAILROAD TIE!"
         send_message(msg)
     if re.search("I'm a bad mutherfucker", data['text'], re.IGNORECASE):  #chant if
