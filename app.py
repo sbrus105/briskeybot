@@ -67,7 +67,7 @@ def webhook():
     if re.search('fucking and fighting is all i crave', data['text'], re.IGNORECASE):  #chant if
         msg = "SWEET-MEAT HUNG LIKE A RAILROAD TIE!"
         send_message(msg)
-    if re.search("I'm a bad mutherfucker", data['text'], re.IGNORECASE):  #chant if
+    if re.search("I'm a bad motherfucker", data['text'], re.IGNORECASE):  #chant if
         msg = "I'M A SIGMA PI!"
         send_message(msg)
   return "ok", 200  #send all applicable messages
