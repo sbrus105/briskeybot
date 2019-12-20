@@ -3,6 +3,7 @@ import sys
 import json
 import re
 import random
+import time
 
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
@@ -75,8 +76,8 @@ def webhook():
 
 def send_message(msg):
 
-    for x in range (0,1000000):
-        x += 1
+    from time import sleep
+    sleep(0.05)
 
     url  = 'https://api.groupme.com/v3/bots/post'
   
