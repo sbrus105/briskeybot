@@ -50,9 +50,6 @@ def webhook():
     if re.search('dick cheese', data['text'], re.IGNORECASE):  #cheese if
         msg = "@Jacob Gonzales @Josh Rothfus"
         send_message(msg)
-    if re.search('Navy', data['text'], re.IGNORECASE):  #navy if
-        msg = "SEaMEN"
-        send_message(msg)
     if re.search('69', data['text'], re.IGNORECASE):  #everclear if
         msg = "Nice."
         send_message(msg)
