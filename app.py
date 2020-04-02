@@ -19,7 +19,7 @@ def webhook():
   log('Received {}'.format(data))
 #---------------------------------------------------------
   if data['name'] != 'briskeybot':                       #not message from self
-    if randHund()*5 == 50:
+    if random.randint(0,501) == 42:
         msg = "Shut the fuck up."
         send_message(msg)
     if re.search('gbq', data['text'], re.IGNORECASE):    #It's Jacob If                #The meat
