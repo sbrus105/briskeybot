@@ -35,30 +35,33 @@ def webhook():
     if re.search('nigga', data['text'], re.IGNORECASE):  #Niga if
         msg = "Whoa there, @" + data['name'] + "! That's pretty offensive, please use the correct terminology, 'Basketball American'!"
         send_message(msg)
-    #if data['name'] == 'Wooho Song':                    #Woo if
-       # msg = "Holy shit, is that a message from Woo?"
-       # send_message(msg)
     if re.search('chad', data['text'], re.IGNORECASE):  #Chad if
-        msg = "You know who's a damn chad? @Caleb Sims, that's who."
-        send_message(msg)
+        if randTen() > 59:
+            msg = "You know who's a damn chad? @Caleb Sims, that's who."
+            send_message(msg)
     if re.search('everclear', data['text'], re.IGNORECASE):  #everclear if
-        msg = "Nothing good ever came out of a night that started with Everclear, remember that."
-        send_message(msg)
+        if randTen() > 59:
+            msg = "Nothing good ever came out of a night that started with Everclear, remember that."
+            send_message(msg)
     if re.search('no homo', data['text'], re.IGNORECASE):  #homo if
-        msg = "yes homo"
-        send_message(msg)
+        if randTen() > 59:
+            msg = "yes homo"
+            send_message(msg)
     if re.search('dick cheese', data['text'], re.IGNORECASE):  #cheese if
         msg = "@Jacob Gonzales @Josh Rothfus"
         send_message(msg)
-    if re.search('69', data['text'], re.IGNORECASE):  #everclear if
-        msg = "Nice."
-        send_message(msg)
+    if re.search(' 69 ', data['text'], re.IGNORECASE):  #everclear if
+        if randTen() > 59:
+            msg = "Nice."
+            send_message(msg)
     if re.search('gamer', data['text'], re.IGNORECASE):  #everclear if
-        msg = "Gamer's are the most oppressed minority."
-        send_message(msg)
-    if re.search('420', data['text'], re.IGNORECASE):  #everclear if
-        msg = "Blaze it"
-        send_message(msg)
+        if randTen() > 59:
+            msg = "Gamer's are the most oppressed minority."
+            send_message(msg)
+    if re.search(' 420 ', data['text'], re.IGNORECASE):  #everclear if
+        if randTen() > 59:
+            msg = "Blaze it"
+            send_message(msg)
     if re.search('born on a beach', data['text'], re.IGNORECASE):  #chant if
         msg = "RAISED IN A CAVE!"
         send_message(msg)
@@ -70,6 +73,9 @@ def webhook():
         send_message(msg)
   return "ok", 200  #send all applicable messages
 #---------------------------------------------------------
+def randHund():
+    int = random.randint(0,101)
+    return int
 
 def send_message(msg):
 
