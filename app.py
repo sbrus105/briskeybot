@@ -26,9 +26,8 @@ def webhook():
         msg = "It's Jacob."
         send_message(msg)
     if re.search('frost', data['text'], re.IGNORECASE):  #Frost if
-        if randTen() > 69:
-            msg = "Fuck Jonathan Frost!"
-            send_message(msg)
+        msg = "Fuck Jonathan Frost!"
+        send_message(msg)
     if re.search('nigger', data['text'], re.IGNORECASE):  #Nig if
         msg = "Whoa there, @" + data['name'] + "! That's pretty offensive, please use the correct terminology, 'Basketball American'!"
         send_message(msg)
